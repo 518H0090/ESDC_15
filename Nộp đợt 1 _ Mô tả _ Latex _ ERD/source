@@ -1,0 +1,49 @@
+\documentclass{article}
+\usepackage[utf8]{vietnam}
+\usepackage{graphicx}
+
+\title{CS502052 – FINAL PROJECT PROPOSAL}
+\author{Group 15 }
+\date{January 2021}
+
+\begin{document}
+
+\maketitle
+
+\section{Thông tin nhóm [Mã nhóm báo cáo: 15.]}
+    
+    Họ và tên SV1: Đặng Vi Nhiên \hspace{2cm} MSSV: 518H0661\\ 
+    Họ và tên SV2: Huỳnh Trần Trung Hiếu\hspace{0.67cm} MSSV:519H0090 \\
+    Họ và tên SV3: Nguyễn Thanh Nguyên \hspace{0.73cm} MSSV:518H0659
+
+\section{Đặc Tả Hệ Thống}
+    \quad Hệ thống mua bán quan tài là một Website cung cấp cho người sử dụng , nhà quản lý ( admin) những chức năng cần thiết để tiến hành một giao dịch, quản lý hoạt động và sự phát triển của mình. Đối với khách hàng, hệ thống cho phép xem thông tin về sản phẩm và dịch vụ của cửa hàng. Khách hàng sau khi đăng ký có thể chọn sản phẩm hay dịch vụ trên website đưa vào giỏ hàng và tiến hành giao dịch mua bán. Sau khi chọn hàng xong khách hàng có thể chuyển qua việc chọn ngày và giờ để thực hiện  dịch vụ và cuối cùng là thanh toán đơn hàng. Sau khi đã thực hiện xong khách hàng nhấn nút xác nhận để bắt đầu giao dịch.\vspace{0.25cm}
+   
+	Đối với nhân viên, là người tiếp nhận các đơn hàng do quản lý chuyển đến thực hành các dịch vụ  và xác nhận thực hiện dịch vụ đã hoàn tất.
+	\subsection{1.Chức năng của hệ thống có thể chia làm nhiều nhóm chức năng sau:}\\
+	    \quad \quad \subsubsection{Nhóm chức năng xem thông tin , bao gồm xem thông tin đơn hàng, xem thông tin sản phẩm, xem thông tin nhân viên.}
+	    \subsubsection{Nhóm chức năng quản lý thông tin, bao gồm quản lý thông tin nhân viên, quản lý danh mục sản phẩm.}
+	    \subsubsection{Nhóm chức năng mua hàng tiếp nhận và xử lý đơn hàng.}
+	    
+    \subsection{Xác định các chức năng chính của hệ thống:}\\
+        \subsubsection{KHÁCH HÀNG: làm người giao dịch với hệ thống thông qua các đơn đặt hàng. Khách hàng có thể lựa chọn sản phẩm, chọn địa điểm và thời gian sử dụng dịch vụ.}
+        \subsubsection{NHÂN VIÊN: là người tiếp nhận các đơn hàng và các yêu cầu dịch vụ do người quản lý giao.}
+        \subsubsection{QUẢN LÝ: người tiếp nhận xử lý các đơn hàng và phân công nhân viên thực hiện dịch vụ.}
+        
+\section{Lược đồ phân tích hệ thống.}
+    \subsection{RED:}\\
+    \begin{center}
+    \begin{figure}[h]
+        \centering
+        \includegraphics[width=14.19cm,height=10.45cm]{Picture/ERD.png}
+        \caption{ERD:  Entity Relationship Diagram}
+    \end{figure}
+    \end{center}
+    \subsection{Use Case:}\\
+    \begin{figure}[h]
+        \centering
+        \includegraphics[width=13.01cm,height=12.42cm]{Picture/UC.png}
+        \caption{Ssơ đồ để thể hiện các trường hợp xảy ra trong hệ thống}
+    \end{figure}
+
+\end{document}
