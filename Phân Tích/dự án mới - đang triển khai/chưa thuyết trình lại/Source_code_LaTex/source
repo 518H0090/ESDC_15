@@ -1,0 +1,99 @@
+\documentclass{article}
+\usepackage[utf8]{vietnam}
+\usepackage{graphicx}
+
+\title{CS502052 – FINAL PROJECT PROPOSAL}
+\author{Group 15 }
+\date{January 2021}
+
+\begin{document}
+
+\maketitle
+
+\section{Thông tin nhóm [Mã nhóm báo cáo: 15.]}
+    
+    Họ và tên SV1: Đặng Vi Nhiên \hspace{2cm} MSSV: 518H0661\\ 
+    Họ và tên SV2: Huỳnh Trần Trung Hiếu\hspace{0.67cm} MSSV:519H0090 \\
+    Họ và tên SV3: Nguyễn Thanh Nguyên \hspace{0.73cm} MSSV:518H0659
+
+\section{Đặc Tả Hệ Thống}
+    \quad Hệ thống cho phép tin học hóa toàn bộ mọi dữ liệu của một cửa hàng. Cho phép người dùng sở hữu được một phần mềm có thể quản lý và giải quyết mọi vấn đề một cách nhanh chóng và tiện lợi. Các chức vụ của nhân viên sẽ được phân quyền và mỗi quyền điều sẽ có một quyền mặc định trong một cửa hàng. Các vị trí chính để thực hiện các chức năng của một cửa hàng là “ cửa hàng trưởng”, “ quản lý bếp”, “quản lý nhân sự - thu ngân” và “quản lý phục vụ”.\vspace{0.25cm}
+     Và dưới mỗi quản lý là sẽ có từ 5 đến 8 nhân viên để thực hiện một việc nào đó ở bộ phận của mình.\vspace{0.25cm}h
+        \begin{figure}[htp]
+            \centering
+            \includegraphics{Picture/A.png}
+            \caption{Sơ đồ các nhân sự chính của cửa hàng}
+        \end{figure}
+   
+   .
+	\subsection{Chức năng của hệ thống có thể chia làm nhiều nhóm chức năng sau:}\\
+
+	    \begin{enumerate}
+            \item Nhóm chức năng xem thông tin: bao gồm xem thông tin đơn hàng, thông tin sản phẩm ( hạn sử dụng, nhà sản xuất, ngày nhập ngày xuất kho, xem thông tin nhân viên( mã nhân viên họ tên và các thông tin liên quan), xem thông tin ca trực.
+
+            \item Nhóm chức năng quản lý thông tin: bao gồm thông tin đơn hàng, thông tin nhân viên, quản lý các sản phẩm.
+
+            \item Nhóm chức năng tiếp nhận và xử lý.
+        \end{enumerate}
+	    
+    \subsection{Xác định các chức năng chính của hệ thống:}\\
+        \begin{enumerate}
+            \item  Cửa hàng trưởng: có thể tổng kiểm soát toàn bộ mọi thứ trong cửa hàng ( nhập hàng, xuất hàng, nhân lực, doanh thu, lương bổng, các trang thiết bị…) tạo lịch họp cửa hàng hằng tháng, tạo thông báo đến các nhân viên. Giải quyết các lá đơn của nhân viên.
+
+            \item  Quản lý bếp: có quyền nhập hàng, kiểm tra kho, kiểm hàng sau mỗi ngày làm, đưa hàng có hạn sử dụng sắp đến lên đầu, kiểm soát mức độ vệ sinh trong bếp ( vd: nước đúng kỳ hạn 6 tháng phải kiểm tra thay lọc, các chất thuốc tẩy còn lại bao nhiêu, etc…), quản lý những thức ăn bị lãng phí (waste)
+
+            \item quản lý nhân sự - thu ngân: có quyền được kiểm tra doanh thu một ngày cửa cửa hàng, tạo một profile cho nhân sự mới, phát lương cho nhân viên thông qua ngân hàng, sa thải nhân sự. Sắp xếp lịch làm cho toàn bộ cửa hàng hàng tuần và cập nhật lên hệ thống cho các quản lý khác xem. Xử lý các hóa đơn khách đã hủy hoặc khách đổi ý.Những đơn hàng dưới 1km sẽ điều động nhân viên đi giao miễn phí, trên 1km phải liên hệ đến bên thứ 3 như Grad, now, bemin, bee, gojeck. Lương của nhân viên được tính là 25k/ giờ và tiền thưởng là tiền nhân viên làm trong những ngày lễ lớn như 30/4, 1 tháng 5,  2/9, etc... 
+            
+            \item quản lý phục vụ: có chức năng thông báo với bếp về những bữa tiệc sắp tới để bếp chuẩn bị đồ ăn trước. Quản lý các vật dụng vệ sinh như nước lau bàn nước lau sàn vân vân.  Quản lý các vật dụng cho phục vụ.
+            
+            \item Nhân viên: có quyền đăng nhập xem lịch làm và xem các thông báo từ cửa hàng trưởng và quản lý. Xin nghỉ bằng hình thức nộp đơn trực tuyến ( nếu nhân viên có việc đột xuất xin nghỉ thì nộp đơn lên hệ thống cửa hàng trưởng sẽ là người giải quyết đơn. Nếu đồng ý cho nghỉ thì sẽ trả về kết quả “ đồng ý” và lịch làm nhân viên hôm đó bị vắng)
+
+        \end{enumerate}
+        
+\section{Lược đồ phân tích hệ thống.}
+    \subsection{RED:}\\
+    \begin{figure}[htp]
+        \centering
+        \includegraphics[scale=1.25]{Picture/ERD.png}
+        \caption{ERD:  Entity Relationship Diagram}
+    \end{figure}
+ 
+    \subsection{Use Case:}\\
+     \begin{figure}[htp]
+        \centering
+        \includegraphics[scale=1]{Picture/CHT.png}
+             \caption{Use case cửa hàng trưởng}
+    \end{figure}
+    
+    \begin{figure}[htp]
+         \centering
+        \includegraphics[scale=1]{Picture/QLbep.png}
+             \caption{Use case quản lý bếp}
+    \end{figure}
+    
+    \begin{figure}[htp]
+        \centering
+        \includegraphics[scale=1.5]{Picture/QLnhansu.png}
+            \caption{Use case quản lý nhân sự - thu ngân}
+     \end{figure}
+     
+    \begin{figure}[htp]
+        \centering
+        \includegraphics[scale=1]{Picture/QLphucvu.png}
+             \caption{Use case quản lý phục vụ}
+    \end{figure}
+    
+     \begin{figure}[htp]   
+        \centering
+        \includegraphics[scale=1]{Picture/QLnhanvien.png}
+        \caption{Use case nhân viên}
+    \end{figure} 
+    
+    \begin{figure} [htp]
+        \centering
+        \includegraphics[scale=1.5]{Picture/UC.png}
+            \caption{Sơ đồ để thể hiện các trường hợp xảy ra trong hệ thống}
+    \end{figure}
+
+
+\end{document}

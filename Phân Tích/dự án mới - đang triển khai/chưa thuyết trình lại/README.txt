@@ -1,0 +1,1 @@
+Do bản pdf bị bể hình nên em giử thầy bản .Docx để xem. Mọi hình vẽ và hình ảnh nhóm em sẽ khắc phục sớm nhất có thể. 
