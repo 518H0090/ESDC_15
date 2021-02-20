@@ -3,11 +3,11 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\RegencyController;
-use App\Http\Controllers\BasicSalaryController; 
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\DepartmentJoinController;
 use App\Http\Controllers\CalendarController;
 use App\Http\Controllers\BonusDiscipController;
+use App\Http\Controllers\StatistController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -68,25 +68,6 @@ Route::prefix('/admin')->group(function () {
 
     });
 
-    Route::prefix('/basicsalary')->group(function () {
-        Route::get('/',[BasicSalaryController::class,'index'])->name('basicsalary.index');
-
-         //add
-         Route::get('/add',[BasicSalaryController::class,'add'])->name('basicsalary.add');
-
-         //store
-         Route::post('/store',[BasicSalaryController::class,'store'])->name('basicsalary.store');
-
-         //delete
-         Route::get('/delete/{id}',[BasicSalaryController::class,'delete'])->name('basicsalary.delete');
-
-         //edit
-         Route::get('/edit/{id}',[BasicSalaryController::class,'edit'])->name('basicsalary.edit');
-
-         //update
-         Route::post('/update/{id}',[BasicSalaryController::class,'update'])->name('basicsalary.update');
-    });
-
     Route::prefix('/employee')->group(function () {
         Route::get('/',[EmployeeController::class,'index'])->name('employee.index');
 
@@ -127,8 +108,6 @@ Route::prefix('/admin')->group(function () {
         Route::get('/edit/{id}',[CalendarController::class,'edit'])->name('calendar.edit');
 
         Route::post('/update/{id}',[CalendarController::class,'update'])->name('calendar.update');
-
-        Route::get('/details/{id}',[CalendarController::class,'details'])->name('calendar.details');
     });
 
     Route::prefix('/bonus_discip')->group(function () {
@@ -144,5 +123,20 @@ Route::prefix('/admin')->group(function () {
 
         Route::post('/update/{id}',[BonusDiscipController::class,'update'])->name('bonusdiscip.update');
     });
+
+    Route::prefix('/statists')->group(function () {
+        Route::get('/',[StatistController::class,'index'])->name('statists.index');
+
+        Route::get('/add',[StatistController::class,'add'])->name('statists.add');
+
+        Route::post('/store',[StatistController::class,'store'])->name('statists.store');
+
+        Route::get('/delete/{id}',[StatistController::class,'delete'])->name('statists.delete');
+
+        Route::get('/statist/{id}/{employee_id}/{year}/{month}',[StatistController::class,'statist'])->name('statists.statist');
+
+        Route::post('/resultstatist/{id}',[StatistController::class,'resultstatist'])->name('statists.resultstatist');
+    });
+
 });
 

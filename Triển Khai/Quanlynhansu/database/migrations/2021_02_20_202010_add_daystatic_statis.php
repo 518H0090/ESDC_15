@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCalendarsTable extends Migration
+class AddDaystaticStatis extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,9 @@ class CreateCalendarsTable extends Migration
      */
     public function up()
     {
-        Schema::create('calendars', function (Blueprint $table) {
-            $table->id();
-            $table->date('daywork');
-            $table->integer('employee_id')->nullable();;
-            $table->integer('attendance')->default(0);
-            $table->timestamps();
+        Schema::table('statists', function (Blueprint $table) {
+            //
+            $table->date('daystatist')->nullable();
         });
     }
 
@@ -29,6 +26,9 @@ class CreateCalendarsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('calendars');
+        Schema::table('statists', function (Blueprint $table) {
+            //
+            $table->dropColumn('daystatist');
+        });
     }
 }

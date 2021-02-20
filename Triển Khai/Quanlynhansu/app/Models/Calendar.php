@@ -11,11 +11,7 @@ class Calendar extends Model
     protected $table = 'calendars';
     protected $fillable = ['daywork','ca'];
 
-    public function attend(){
-        return $this->hasMany(Employee_Calendar::class,'calendar_id');
-    }
-
     public function employee(){
-        return $this->belongsToMany(Employee::class,Employee_Calendar::class,'calendar_id','employee_id');
+        return $this->belongsTo(Employee::class,'employee_id');
     }
 }

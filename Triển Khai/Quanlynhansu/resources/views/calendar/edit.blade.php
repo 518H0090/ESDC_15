@@ -39,17 +39,31 @@
                           value="{{$calendar->ca}}"
                           >
                         </div>
+                      
                         <div class="form-group">
                           <label>Chọn Nhân Viên</label>
-                          <select class="form-control js-example-basic-multiple-limit" name='employee_id[]' multiple>
-                              <option value=''></option>
-                              @foreach ($employee as $item)
-                                  <option {{ $employeeofcalendar->contains('id',$item->id) ? 'selected' : '' }} 
-                                  value="{{$item->id}}">{{$item->name}}</option>
-                              @endforeach
-                            
+                          <select class="form-control" name='employee_id'>
+                              <option value='0'>Chọn Nhân Viên</option>
+                              {!! $employee !!}
                           </select>
                       </div>
+
+                        <div class="form-group">
+                          <label>Điểm danh</label>
+                          <select class="form-control" name='attendance'>
+                            @if ($calendar->attendance == 0)
+                            <option value='0' selected>Nghỉ làm</option>
+                            <option value='1'>Đi làm</option>
+                            @else
+                            <option value='0'>Nghỉ làm</option>
+                            <option value='1' selected>Đi làm</option>
+                            @endif
+                             
+                             
+                          </select>
+                      </div>
+
+                      
           
                         <button type="submit" class="btn btn-primary">Submit</button>
                       </form>

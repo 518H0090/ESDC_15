@@ -23,49 +23,50 @@ class CalendarController extends Controller
     }
 
     public function add(){
-        $employee = $this->employee->all();
+        $employee = $this->getEmployee($id='');
         return view('calendar.add',compact('employee'));
     }
 
     public function store(Request $request){
-        $calendar = $this->calendar->create([
-            'daywork' => $request->daywork,
-            'ca' => $request->ca,
-        ]);
-        $calendar->employee()->attach($request->employee_id);
+        $calendar = new Calendar();
+        $calendar->employee_id = $request->employee_id;
+        $calendar->daywork = $request->daywork;
+        $calendar->ca = $request->ca;
+        $calendar->save();
         return redirect()->route('calendar.index');
     }
 
     public function delete($id){
         $calendar = $this->calendar->find($id);
         $calendar->delete();
-        $calendar->employee()->detach();
         return redirect()->route('calendar.index');
     }
 
     public function edit($id){
-        $employee = $this->employee->all();
         $calendar = $this->calendar->find($id);
-        $employeeofcalendar = $calendar->employee;
-        return view('calendar.edit',compact('calendar','employee','employeeofcalendar'));
+        $employee = $this->getEmployee($calendar->employee_id);
+        return view('calendar.edit',compact('calendar','employee'));
+    }
+
+    public function getEmployee($id){
+        $emloyee = $this->employee->all();
+        $listitem = new ListItem($emloyee);
+        $emloyeeoption = $listitem->getAll($id);
+        return $emloyeeoption;
     }
 
     public function update($id,Request $request){
         $calendar = $this->calendar->find($id);
-
         $calendar->update([
             'daywork' => $request->daywork,
             'ca' => $request->ca,
+            'employee_id' => $request->employee_id,
         ]);
 
-        $calendar->employee()->sync($request->employee_id);
+        $calendar2 = new Calendar();
+        $calendarid = $calendar2->find($id);
+        $calendarid->attendance = $request->attendance;
+        $calendarid->save();
         return redirect()->route('calendar.index');
-    }
-
-    public function details($id){
-        $calendar = $this->calendar->find($id);
-        $employeeofcalendar = $calendar->employee;
-        $employeeattend = $calendar->attend;
-        return view('calendar.details',compact('calendar','employeeofcalendar','employeeattend'));
     }
 }

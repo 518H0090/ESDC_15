@@ -20,10 +20,16 @@ class Employee extends Model
     }
 
     public function calendar(){
-        return $this->belongsToMany(Calendar::class,Employee_Calendar::class,'employee_id','calendar_id');
+        return $this->hasOne(Calendar::class,'employee_id');
     }
 
     public function bonus_discip(){
         return $this->hasMany(bonus_discip::class,'employee_id');
     }
+
+    public function statist(){
+        return $this->hasMany(Statist::class,'employee_id');
+    }
+
+
 }

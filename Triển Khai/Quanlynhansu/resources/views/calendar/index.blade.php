@@ -25,6 +25,8 @@
                             {{-- <th scope="col">Nhân Viên</th>
                             <th scope="col">Điểm danh</th> --}}
                             <th scope="col">Ca làm</th>
+                            <th scope="col">Nhân Viên</th>
+                            <th scope="col">Điểm danh</th>
                             <th scope="col">Action</th>
                           </tr>
                         </thead>
@@ -40,12 +42,17 @@
                             </td>
                             <td>
                               @foreach ($item->attend as $value)
-                                {{$value->attendance == 0 ? 'Nghỉ Làm': 'Đi Làm'}}
+                                
                               @endforeach
                             </td>   --}}
                             <td>{{$item->ca}}</td>
+                            <td>{{$item->employee->name}}</td>
                             <td>
-                                <a href="{{route('calendar.details',['id'=>$item->id])}}" class="btn btn-default">Chi tiết</a>
+                          
+                              {{$item->attendance == 0 ? 'Nghỉ Làm': 'Đi Làm'}}
+                            
+                            </td>
+                            <td>
                                 <a href="{{route('calendar.edit',['id'=>$item->id])}}" class="btn btn-default">Sửa</a>
                                 <a href="{{route('calendar.delete',['id'=>$item->id])}}" onclick="return confirm('xác nhận xóa?');" class="btn btn-default">Xóa</a>
                             </td>

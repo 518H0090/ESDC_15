@@ -52,7 +52,8 @@ class RegencyController extends Controller
     public function update(RegencyRequest $request,$id){
         $this->regency->find($id)->update([
             'name' => $request->name,
-            'parent_id' => $request->parent_id
+            'parent_id' => $request->parent_id,
+            'basic_money' => $request->basic_money,
         ]);
         return redirect()->route('regency.index');
     }

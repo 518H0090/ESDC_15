@@ -23,6 +23,7 @@
                               {!! $department !!}
                           </select>
                       </div>
+                      
                       <div class="form-group">
                         <label>Chọn Nhân Viên</label>
                         <select class="form-control " name='employee_id'>

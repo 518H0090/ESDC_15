@@ -22,6 +22,7 @@
                           <tr>
                             <th scope="col">#</th>
                             <th scope="col">Name</th>
+                            <th scope="col">Tiền Lương Cơ Bản</th>
                             <th scope="col">Action</th>
                           </tr>
                         </thead>
@@ -30,6 +31,7 @@
                           <tr>
                             <th scope="row">{{$regency->id}}</th>
                             <td>{{$regency->name}}</td>
+                            <td>{{$regency->basic_money}}</td>
                             <td>
                                 <a href="{{route('regency.edit',['id'=>$regency->id])}}" class="btn btn-default">Sửa</a>
                                 <a href="{{route('regency.delete',['id'=>$regency->id])}}" onclick="return confirm('xác nhận xóa?');" class="btn btn-default">Xóa</a>

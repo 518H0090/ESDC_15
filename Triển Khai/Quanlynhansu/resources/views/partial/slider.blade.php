@@ -86,15 +86,6 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{route('basicsalary.index')}}" class="nav-link">
-                        <i class="nav-icon fas fa-th"></i>
-                        <p>
-                            Lương Cơ Bản
-                            <span class="right badge badge-primary">Danh mục</span>
-                        </p>
-                    </a>
-                </li>
-                <li class="nav-item">
                     <a href="{{route('employee.index')}}" class="nav-link">
                         <i class="nav-icon fas fa-th"></i>
                         <p>
@@ -126,6 +117,15 @@
                         <i class="nav-icon fas fa-th"></i>
                         <p>
                             Khen-Phạt
+                            <span class="right badge badge-primary">Danh mục</span>
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{route('statists.index')}}" class="nav-link">
+                        <i class="nav-icon fas fa-th"></i>
+                        <p>
+                            Thống Kê
                             <span class="right badge badge-primary">Danh mục</span>
                         </p>
                     </a>

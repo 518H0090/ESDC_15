@@ -28,6 +28,17 @@
                             @enderror
 
                             <div class="form-group">
+                                <label>Điền số tiền</label>
+                                <input type="number" class="form-control @error('basic_money') is-invalid @enderror"
+                                name='basic_money'
+                                placeholder="Điền Số Tiền"
+                                value="{{$regency->basic_money}}">
+                              </div>
+                              @error('basic_money')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                              @enderror
+
+                            <div class="form-group">
                                 <label>Chọn Chức Vụ</label>
                                 <select class="form-control @error('parent_id') is-invalid @enderror" name='parent_id'>
                                     <option value='0'>Chọn Chức Vụ</option>

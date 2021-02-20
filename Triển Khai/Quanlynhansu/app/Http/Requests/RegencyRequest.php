@@ -25,14 +25,16 @@ class RegencyRequest extends FormRequest
     {
         return [
             'name' => 'required|max:50',
+            'basic_money' => 'required',
         ];
     }
 
     public function messages()
     {
         return [
-            'name.required' => 'Làm ơn nhập tên phòng ban',
+            'name.required' => 'Làm ơn nhập tên chức vụ',
             'name.max' => 'độ dài tên chỉ có tối đa 50 ký tự',
+            'basic_money.required' => 'Làm ơn nhập tiền',
         ];
     }
 }
