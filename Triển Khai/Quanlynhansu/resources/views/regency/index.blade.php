@@ -13,9 +13,9 @@
          <div class="content">
              <div class="container-fluid">
                  <div class="row">
-                     <div class="col-md-12">
+                     {{-- <div class="col-md-12">
                         <a class="btn btn-secondary btn-lg m-4 float-right" href="{{route('regency.add')}}" role="button">Thêm</a>
-                     </div>
+                     </div> --}}
                    <div class="col-md-12">
                     <table class="table">
                         <thead class="thead-dark">
@@ -34,7 +34,7 @@
                             <td>{{$regency->basic_money}}</td>
                             <td>
                                 <a href="{{route('regency.edit',['id'=>$regency->id])}}" class="btn btn-default">Sửa</a>
-                                <a href="{{route('regency.delete',['id'=>$regency->id])}}" onclick="return confirm('xác nhận xóa?');" class="btn btn-default">Xóa</a>
+                                {{-- <a href="{{route('regency.delete',['id'=>$regency->id])}}" onclick="return confirm('xác nhận xóa?');" class="btn btn-default">Xóa</a> --}}
                               </td>
                           </tr>
                         @endforeach

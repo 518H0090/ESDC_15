@@ -21,7 +21,7 @@
                                 <input type="text" class="form-control @error('name') is-invalid @enderror"
                                        name='name'
                                        placeholder="Điền Tên Chức vụ"
-                                       value="{{$regency->name}}">
+                                       value="{{$regency->name}}" disabled>
                             </div>
                             @error('name')
                             <div class="alert alert-danger">{{ $message }}</div>
@@ -38,7 +38,7 @@
                                 <div class="alert alert-danger">{{ $message }}</div>
                               @enderror
 
-                            <div class="form-group">
+                            {{-- <div class="form-group">
                                 <label>Chọn Chức Vụ</label>
                                 <select class="form-control @error('parent_id') is-invalid @enderror" name='parent_id'>
                                     <option value='0'>Chọn Chức Vụ</option>
@@ -47,7 +47,7 @@
                             </div>
                             @error('parent_id')
                             <div class="alert alert-danger">{{ $message }}</div>
-                            @enderror
+                            @enderror --}}
 
                             <button type="submit" class="btn btn-primary">Submit</button>
                         </form>
