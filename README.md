@@ -6,3 +6,5 @@ mai làm bảng user đăng nhập và phân quyền bằng middleware.
 lười thì thứ 2 làm.
 
 Cơ bản đã xong hết giờ chỉ cần làm thống kê sơ + bắt lỗi request khi gửi form thiếu là ổn hết.
+
+Tạm ổn lười làm thêm bắt lỗi form bằng validation quá nên thôi :V.
