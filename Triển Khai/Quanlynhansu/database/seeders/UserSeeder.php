@@ -19,12 +19,12 @@ class UserSeeder extends Seeder
             [
                 'email' => 'nhoxhieuro5@gmail.com',
                 'password' => bcrypt('123456'),
-                'regency_id' => 1,
+                'role_id' => 1,
             ],
             [
                 'email' => 'nhoxhieuro6@gmail.com',
                 'password' => bcrypt('123456'),
-                'regency_id' => 2,
+                'role_id' => 2,
             ],
         ];
         DB::table('users')->insert($data);

@@ -31,5 +31,7 @@ class Employee extends Model
         return $this->hasMany(Statist::class,'employee_id');
     }
 
-
+    public function user(){
+        return $this->hasOne(User::class,'employee_id');
+    }
 }

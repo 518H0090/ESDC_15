@@ -17,7 +17,7 @@ class EditColumnUser extends Migration
             //
             $table->dropColumn('name');
             $table->integer('employee_id')->nullable();
-            $table->integer('regency_id')->nullable();
+            $table->integer('role_id')->nullable();
         });
     }
 
@@ -32,7 +32,7 @@ class EditColumnUser extends Migration
             //
             $table->string('name');
             $table->dropColumn('employee_id');
-            $table->dropColumn('regency');
+            $table->dropColumn('role_id');
         });
     }
 }

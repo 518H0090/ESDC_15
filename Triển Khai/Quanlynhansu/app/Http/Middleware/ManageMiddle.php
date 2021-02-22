@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class AdminMiddle
+class ManageMiddle
 {
     /**
      * Handle an incoming request.
@@ -19,7 +19,7 @@ class AdminMiddle
     {
         if(Auth::check()){
 
-            if(\auth()->user()->role_id == 1){
+            if(\auth()->user()->role_id == 1 || \auth()->user()->role_id==2){
                 return $next($request);
             }else{
                 return redirect()->route('dangnhap.dangnhap');
@@ -27,6 +27,6 @@ class AdminMiddle
 
         }else {
             return redirect()->route('dangnhap.dangnhap');
-         }
+        }
     }
 }

@@ -17,7 +17,7 @@
                     <div class="col-md-6">
                         <form action="{{route('statists.resultstatist',['id'=>$statist->id])}}" method="POST">
                             @csrf
-                            
+
                             <div class="form-group">
                                 <label>Lương Cơ Bản</label>
                                 <input type="number" class="form-control "
@@ -71,8 +71,8 @@
                                 value="{{$daystatist}}"
                                 >
                               </div>
-                            
-    
+
+
                             <button type="submit" class="btn btn-primary">Submit</button>
                           </form>
                        </div>
