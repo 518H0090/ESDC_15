@@ -10,6 +10,7 @@ use App\Http\Controllers\BonusDiscipController;
 use App\Http\Controllers\StatistController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,7 +27,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 // 
-Route::view('/home', 'home')->name('home')->middleware('LoginMiddle');
+// Route::view('/home', 'home')->name('home')->middleware('LoginMiddle');
+
+Route::get('/home',[HomeController::class,'index'])->name('home')->middleware('LoginMiddle');
 
 Route::prefix('/dangnhap')->group(function () {
     Route::get('/',[LoginController::class,'index'])->name('dangnhap.dangnhap');
