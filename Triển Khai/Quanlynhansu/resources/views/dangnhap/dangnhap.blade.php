@@ -17,12 +17,12 @@
 <body class="hold-transition login-page">
 <div class="login-box">
   <div class="login-logo">
-    <a href="#"><b>Admin</b>LTE</a>
+    <a href="{{route('dangnhap.dangnhap')}}"><b>ESDC</b>-15</a>
   </div>
   <!-- /.login-logo -->
   <div class="card">
     <div class="card-body login-card-body">
-      <p class="login-box-msg">Sign in to start your session</p>
+      <p class="login-box-msg">Hệ Thống Thông Tin Nhân Viên</p>
 
       <form action="{{route('dangnhap.check')}}" method="post">
         @csrf
