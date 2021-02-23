@@ -1,0 +1,74 @@
+table department{
+  id int [pk, increment]
+  name string
+  description string
+}
+
+table department_join{
+  id int [pk, increment]
+  department_id int [ref: > department.id]
+  employee_id int [ref: > employee.id]
+}
+
+table regency{
+  id int [pk,increment]
+  name string
+  parent_id int
+  basic_money double
+}
+
+table employee{
+  id int [pk,increment]
+  name string
+  image_employee varchar
+  phone int
+  id_regency int [ref: - regency.id]
+  file_name varchar
+}
+
+table users{
+  id int [pk,increment]
+  email string
+  password string
+  employee_id int [ref: - employee.id]
+  role_id int [ref: - role.id]
+}
+
+table statist{
+  id int [pk,increment]
+  employee_id int  [ref: - employee.id]
+  money double
+  bonus_money double [ref: - bonus_discipline.id]
+  discip_money double [ref: - bonus_discipline.id]
+  attend int [ref: - calendar.id]
+  real_money double
+  absent int [ref: - calendar.id]
+  year date
+  month date
+  daystatist date
+}
+
+table bonus_discipline{
+  id int [pk,increment]
+  name string
+  type int
+  day datetime
+  employee_id int [ref: - employee.id]
+  money double
+  description string
+}
+
+table role{
+   id int [pk,increment]
+   name string
+}
+
+table calendar{
+  id int [pk,increment]
+  employee_id int [ref: - employee.id]
+  daywork datetime
+  attendance int
+  ca varchar
+}
+
+
