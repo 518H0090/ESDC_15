@@ -16,7 +16,7 @@ class CreateCalendarsTable extends Migration
         Schema::create('calendars', function (Blueprint $table) {
             $table->id();
             $table->date('daywork');
-            $table->integer('employee_id')->nullable();;
+            $table->integer('employee_id')->nullable()->foreign('employee_id')->references('id')->on('employees')->onUpdate('cascade');
             $table->integer('attendance')->default(0);
             $table->timestamps();
         });

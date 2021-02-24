@@ -15,8 +15,8 @@ class CreateDepartmentJoinsTable extends Migration
     {
         Schema::create('department__joins', function (Blueprint $table) {
             $table->id();
-            $table->integer('department_id');
-            $table->integer('employee_id');
+            $table->integer('department_id')->nullable()->references('id')->on('departments')->onUpdate('cascade');
+            $table->integer('employee_id')->nullable()->references('id')->on('employees')->onUpdate('cascade');
             $table->timestamps();
         });
     }

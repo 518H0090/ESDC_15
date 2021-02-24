@@ -15,7 +15,7 @@ class AddSenformColumnCalendar extends Migration
     {
         Schema::table('calendars', function (Blueprint $table) {
             //
-            $table->integer('sentform_id')->nullable();
+            $table->integer('sentform_id')->nullable()->foreign('sentform_id')->references('id')->on('sent_forms')->onUpdate('cascade');;
         });
     }
 

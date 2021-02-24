@@ -15,8 +15,8 @@ class CreateSentFormsTable extends Migration
     {
         Schema::create('sent_forms', function (Blueprint $table) {
             $table->id();
-            $table->integer('user_id');
-            $table->integer('employee_id');
+            $table->integer('user_id')->nullable()->references('id')->on('users')->onUpdate('cascade');
+            $table->integer('employee_id')->nullable()->references('id')->on('employees')->onUpdate('cascade');
             $table->string('ca');
             $table->date('daywork');
             $table->date('daysent');

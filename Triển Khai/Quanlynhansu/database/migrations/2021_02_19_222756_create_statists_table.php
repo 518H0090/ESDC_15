@@ -15,7 +15,7 @@ class CreateStatistsTable extends Migration
     {
         Schema::create('statists', function (Blueprint $table) {
             $table->id();
-            $table->integer('employee_id');
+            $table->integer('employee_id')->nullable()->references('id')->on('employees')->onUpdate('cascade');
             $table->timestamps();
         });
     }

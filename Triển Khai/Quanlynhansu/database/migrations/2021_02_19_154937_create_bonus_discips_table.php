@@ -18,7 +18,7 @@ class CreateBonusDiscipsTable extends Migration
             $table->string('name');
             $table->integer('type')->default(0);
             $table->date('day');
-            $table->integer('employee_id');
+            $table->integer('employee_id')->nullable()->foreignId('employee_id')->references('id')->on('employees')->onUpdate('cascade');
             $table->double('money');
             $table->text('description');
             $table->timestamps();

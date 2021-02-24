@@ -18,7 +18,7 @@ class CreateEmployeesTable extends Migration
             $table->string('name');
             $table->string('image_employee');
             $table->integer('phone');
-            $table->integer('id_regency');
+            $table->integer('id_regency')->nullable()->references('id')->on('regencies')->onUpdate('cascade');
             $table->integer('status')->default(0);
             $table->timestamps();
         });

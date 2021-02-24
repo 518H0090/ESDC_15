@@ -16,8 +16,8 @@ class EditColumnUser extends Migration
         Schema::table('users', function (Blueprint $table) {
             //
             $table->dropColumn('name');
-            $table->integer('employee_id')->nullable();
-            $table->integer('role_id')->nullable();
+            $table->integer('employee_id')->nullable()->references('id')->on('employees')->onUpdate('cascade');
+            $table->integer('role_id')->nullable()->references('id')->on('roles')->onUpdate('cascade');
         });
     }
 
