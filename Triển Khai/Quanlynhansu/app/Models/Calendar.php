@@ -9,7 +9,7 @@ class Calendar extends Model
 {
     use HasFactory;
     protected $table = 'calendars';
-    protected $fillable = ['daywork','ca'];
+    protected $guarded = [];
 
     public function employee(){
         return $this->belongsTo(Employee::class,'employee_id');

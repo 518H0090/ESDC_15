@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Components\ListItem;
 use App\Models\Calendar;
 use App\Models\Employee;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class CalendarController extends Controller
@@ -19,7 +20,8 @@ class CalendarController extends Controller
 
     public function index(){
         $calendarList = $this->calendar->latest()->paginate(5);
-        return view('calendar.index',compact('calendarList'));
+        $calendar = $this->calendar->get('daywork');
+        return view('calendar.index',compact('calendarList','calendar'));
     }
 
     public function add(){

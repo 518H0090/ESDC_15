@@ -97,10 +97,10 @@
 
                                              </td>
                                              <td>
-                                                 @if($sent->user_id == \Illuminate\Support\Facades\Auth::user()->id)
+                                                 @if($sent->user_id == \Illuminate\Support\Facades\Auth::user()->id && $sent->status == 0)
                                                      <a href="{{route('sentform.edit',['id'=>$sent->id])}}" class="btn btn-default">Sửa</a>
                                                      <a href="{{route('sentform.delete',['id'=>$sent->id])}}" onclick="return confirm('xác nhận xóa?');" class="btn btn-default">Xóa</a>
-                                                 @else
+                                                @else
                                                      <b>Chỉ Xem</b>
                                                  @endif
                                              </td>

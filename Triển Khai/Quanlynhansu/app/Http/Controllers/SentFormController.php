@@ -39,9 +39,8 @@ class SentFormController extends Controller
 
     public function store(Request $request){
 //        $carbon = new Carbon($request->daywork);
-//        $timework = $carbon->toDateString();
-//        $dayofyear = $carbon->weekOfYear;
-//        dd($dayofyear);
+//        $timework = $carbon->weekOfYear;
+//        dd($timework);
         $this->sentform->create([
             'user_id' => $request->user_id,
             'employee_id' => $request->employee_id,
