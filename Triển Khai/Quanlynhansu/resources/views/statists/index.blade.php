@@ -38,7 +38,14 @@
                                      @foreach($statist as $item)
                                          <tr>
                                              <th scope="row">{{$item->id}}</th>
-                                             <td>{{$item->employee->name}}</td>
+                                             <td>
+                                                 @if ($item->employee == null)
+                                                     <b>Xóa Tạm Thời</b>
+                                                 @else
+                                                 {{$item->employee->name}}
+                                                 @endif
+                                                 
+                                            </td>
                                              <td colspan="2">
                                                  Năm:{{$item->year}}|| Tháng:{{$item->month}}
                                              </td>
@@ -83,7 +90,14 @@
                                      @foreach($statist as $item)
                                          <tr>
                                              <th scope="row">{{$item->id}}</th>
-                                             <td>{{$item->employee->name}}</td>
+                                             <td>
+                                                @if ($item->employee == null)
+                                                    <b>Xóa Tạm Thời</b>
+                                                @else
+                                                {{$item->employee->name}}
+                                                @endif
+                                                
+                                           </td>
                                              <td colspan="2">
                                                  Năm:{{$item->year}}|| Tháng:{{$item->month}}
                                              </td>

@@ -33,9 +33,29 @@
                                  @foreach($departmentjoin as $Item)
                                      <tr>
                                          <th scope="row">{{$Item->id}}</th>
-                                         <td>{{$Item->department->name}}</td>
-                                         <td>{{$Item->employee->name}}</td>
-                                         <td>{{$Item->employee->regency->name}}</td>
+                                         <td>
+                                             @if ($Item->department == null)
+                                             <b>Tạm Thời Xóa</b> 
+                                             @else
+                                             {{$Item->department->name}}
+                                             @endif
+                                             
+                                        </td>
+                                         <td>
+                                             @if ($Item->employee == null)
+                                             <b>Tạm Thời Xóa</b> 
+                                             @else
+                                             {{$Item->employee->name}}
+                                             @endif
+                                            
+                                        </td>
+                                         <td>
+                                             @if ($Item->employee->regency == null)
+                                             <b>Tạm Thời Xóa</b> 
+                                             @else
+                                             {{$Item->employee->regency->name}}
+                                             @endif
+                                        </td>
                                          <td>
                                              <a href="{{route('departmentjoin.edit',['id'=>$Item->id])}}" class="btn btn-default">Sửa</a>
                                              <a href="{{route('departmentjoin.delete',['id'=>$Item->id])}}" onclick="return confirm('xác nhận xóa?');" class="btn btn-default">Xóa</a>
@@ -69,13 +89,29 @@
                                      @foreach($departmentjoin as $Item)
                                          <tr>
                                              <th scope="row">{{$Item->id}}</th>
-                                             <td>{{$Item->department->name}}</td>
-                                             <td>{{$Item->employee->name}}</td>
-                                             <td>{{$Item->employee->regency->name}}</td>
-{{--                                             <td>--}}
-{{--                                                 <a href="{{route('departmentjoin.edit',['id'=>$Item->id])}}" class="btn btn-default">Sửa</a>--}}
-{{--                                                 <a href="{{route('departmentjoin.delete',['id'=>$Item->id])}}" onclick="return confirm('xác nhận xóa?');" class="btn btn-default">Xóa</a>--}}
-{{--                                             </td>--}}
+                                             <td>
+                                                @if ($Item->department == null)
+                                                <b>Tạm Thời Xóa</b> 
+                                                @else
+                                                {{$Item->department->name}}
+                                                @endif
+                                                
+                                           </td>
+                                            <td>
+                                                @if ($Item->employee == null)
+                                                <b>Tạm Thời Xóa</b> 
+                                                @else
+                                                {{$Item->employee->name}}
+                                                @endif
+                                               
+                                           </td>
+                                            <td>
+                                                @if ($Item->employee->regency == null)
+                                                <b>Tạm Thời Xóa</b> 
+                                                @else
+                                                {{$Item->employee->regency->name}}
+                                                @endif
+                                           </td>
                                          </tr>
                                      @endforeach
                                      </tbody>

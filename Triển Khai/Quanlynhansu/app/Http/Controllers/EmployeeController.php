@@ -64,7 +64,7 @@ class EmployeeController extends Controller
 
     public function delete($id){
         $employeedelete = $this->employee->find($id);
-        File::delete(public_path('storage/avatars/'. $employeedelete->file_name));
+        // File::delete(public_path('storage/avatars/'. $employeedelete->file_name));
         $employeedelete->delete();
         return redirect()->route('employee.index');
     }
@@ -92,7 +92,7 @@ class EmployeeController extends Controller
                 'file_name' => $filename,
 
             ]);
-            File::delete(public_path('storage/avatars/'. $request->image_name));
+            // File::delete(public_path('storage/avatars/'. $request->image_name));
         }
         else{
             $employee = $this->employee->find($id);

@@ -62,7 +62,14 @@
                                              </td>
 
                                              <td>{{$item->ca}}</td>
-                                             <td>{{$item->employee->name}}</td>
+                                             <td>
+                                                 @if ($item->employee == null)
+                                                     <b>Tạm Thời Xóa</b>
+                                                 @else
+                                                 {{$item->employee->name}}
+                                                 @endif
+                                                
+                                            </td>
                                              <td>
 
                                                  {{$item->attendance == 0 ? 'Nghỉ Làm': 'Đi Làm'}}
@@ -128,7 +135,14 @@
                                                  @endif
                                              </td>
                                              <td>{{$item->ca}}</td>
-                                             <td>{{$item->employee->name}}</td>
+                                             <td>
+                                                @if ($item->employee == null)
+                                                    <b>Tạm Thời Xóa</b>
+                                                @else
+                                                {{$item->employee->name}}
+                                                @endif
+                                               
+                                           </td>
                                              <td>
 
                                                  {{$item->attendance == 0 ? 'Nghỉ Làm': 'Đi Làm'}}

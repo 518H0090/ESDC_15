@@ -16,7 +16,7 @@ class CreateRegenciesTable extends Migration
         Schema::create('regencies', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->integer('parent_id')->nullable()->references('id')->on('regencies')->onUpdate('cascade');
+            $table->integer('parent_id')->nullable()->references('id')->on('regencies')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
     }

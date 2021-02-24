@@ -36,8 +36,20 @@
                                      @foreach($sentform as $sent)
                                          <tr>
                                              <th scope="row">{{$sent->id}}</th>
-                                             <td>{{$sent->user->email}}</td>
-                                             <td>{{$sent->user->employee->name}}</td>
+                                             <td>
+                                                 @if ($sent->user == null)
+                                                 <b>Tạm Thời Xóa</b>
+                                                 @else
+                                                 {{$sent->user->email}}
+                                                 @endif
+                                            </td>
+                                             <td>
+                                                 @if ($sent->user->employee == null)
+                                                     <b>Tạm Thời Xóa</b>
+                                                 @else
+                                                 {{$sent->user->employee->name}}
+                                                 @endif
+                                            </td>
                                              <td>{{$sent->ca}}</td>
                                              <td>{{$sent->daywork}}</td>
                                              <td>{{$sent->daysent}}</td>
@@ -83,8 +95,20 @@
                                          @if($sent->user_id == \Illuminate\Support\Facades\Auth::user()->id)
                                          <tr>
                                              <th scope="row">{{$sent->id}}</th>
-                                             <td>{{$sent->user->email}}</td>
-                                             <td>{{$sent->user->employee->name}}</td>
+                                             <td>
+                                                @if ($sent->user == null)
+                                                <b>Tạm Thời Xóa</b>
+                                                @else
+                                                {{$sent->user->email}}
+                                                @endif
+                                           </td>
+                                            <td>
+                                                @if ($sent->user->employee == null)
+                                                    <b>Tạm Thời Xóa</b>
+                                                @else
+                                                {{$sent->user->employee->name}}
+                                                @endif
+                                           </td>
                                              <td>{{$sent->ca}}</td>
                                              <td>{{$sent->daywork}}</td>
                                              <td>{{$sent->daysent}}</td>

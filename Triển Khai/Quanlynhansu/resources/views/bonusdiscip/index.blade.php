@@ -39,7 +39,14 @@
                                              <td>{{$Item->name}}</td>
                                              <td>{{$Item->type == 0 ? 'Khen thưởng':'Kỷ Luật'}}</td>
                                              <td>{{$Item->day}}</td>
-                                             <td>{{$Item->employee->name}}</td>
+                                             <td>
+                                                 @if ($Item->employee == null)
+                                                     <b>Tạm Thời xóa</b>
+                                                 @else
+                                                 {{$Item->employee->name}}
+                                                 @endif
+                                                
+                                            </td>
                                              <td>{{$Item->money}}</td>
                                              <td>{{$Item->description}}</td>
                                              <td>
@@ -81,7 +88,14 @@
                                              <td>{{$Item->name}}</td>
                                              <td>{{$Item->type == 0 ? 'Khen thưởng':'Kỷ Luật'}}</td>
                                              <td>{{$Item->day}}</td>
-                                             <td>{{$Item->employee->name}}</td>
+                                             <td>
+                                                @if ($Item->employee == null)
+                                                    <b>Tạm Thời xóa</b>
+                                                @else
+                                                {{$Item->employee->name}}
+                                                @endif
+                                               
+                                           </td>
                                              <td>{{$Item->money}}</td>
                                              <td>{{$Item->description}}</td>
 {{--                                             <td>--}}

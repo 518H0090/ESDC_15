@@ -47,7 +47,14 @@
                                     <img class='image--small' src="{{$Eitem->image_employee}}" alt="Anh_nhanvien">
                                 </td>
                                 <td>{{$Eitem->phone}}</td>
-                                <td>{{$Eitem->regency->name}}</td>
+                                <td>
+                                    @if ($Eitem->regency == null)
+                                       <b>Tạm Thời Xóa</b> 
+                                    @else
+                                    {{$Eitem->regency->name}}
+                                    @endif
+                                    
+                                </td>
                                 <td>
                                     <a href="{{route('employee.edit',['id'=>$Eitem->id])}}" class="btn btn-default">Sửa</a>
                                     <a href="{{route('employee.delete',['id'=>$Eitem->id])}}" onclick="return confirm('xác nhận xóa?');" class="btn btn-default">Xóa</a>

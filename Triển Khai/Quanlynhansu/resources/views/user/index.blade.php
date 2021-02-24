@@ -34,7 +34,7 @@
                             <th scope="col">Tài Khoản</th>
                             <th scope="col">Nhân Viên</th>
                             <th scope="col">Ảnh</th>
-                            <th scope="col">Chức Vụ</th>
+                            <th scope="col">Quyền</th>
                             <th scope="col">Action</th>
                           </tr>
                         </thead>
@@ -44,24 +44,24 @@
                             <th scope="row">{{$Item->id}}</th>
                             <td>{{$Item->email}}</td>
                             <td>
-                              @if ($Item->employee_id == null)
-
+                              @if ($Item->employee == null)
+                                  <b>Tạm Thời Xóa</b>
                               @else
                                  {{$Item->employee->name}}
                               @endif
 
                             </td>
                             <td>
-                              @if ($Item->employee_id == null)
-
+                              @if ($Item->employee == null)
+                              <b>Tạm Thời Xóa</b>
                               @else
                               <img class="image--small" src="{{$Item->employee->image_employee}}" alt="">
 
                               @endif
                             </td>
                             <td>
-                              @if ($Item->role_id == null)
-                              {{$Item->role_id}}
+                              @if ($Item->role == null)
+                              <b>Tạm Thời Xóa</b>
                             @else
                                {{$Item->role->name}}
                             @endif
