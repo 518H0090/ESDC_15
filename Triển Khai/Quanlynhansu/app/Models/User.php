@@ -52,4 +52,8 @@ class User extends Authenticatable
     public function role(){
         return $this->belongsTo(Role::class,'role_id');
     }
+
+    public function sentform(){
+        return $this->hasOne(SentForm::class,'user_id');
+    }
 }

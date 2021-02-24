@@ -107,6 +107,16 @@
                         </p>
                     </a>
                 </li>
+                    
+                <li class="nav-item">
+                    <a href="{{route('sentform.index')}}" class="nav-link">
+                        <i class="nav-icon fas fa-th"></i>
+                        <p>
+                            Kế Hoạch
+                            <span class="right badge badge-primary">Admin</span>
+                        </p>
+                    </a>
+                </li>
             </ul>
         </nav>
            @elseif(\Illuminate\Support\Facades\Auth::user()->role_id == 2)
@@ -178,6 +188,15 @@
                         </p>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a href="{{route('sentform.index')}}" class="nav-link">
+                        <i class="nav-icon fas fa-th"></i>
+                        <p>
+                            Kế Hoạch
+                            <span class="right badge badge-primary">Manage</span>
+                        </p>
+                    </a>
+                </li>
             
             </ul>
         </nav>
@@ -237,6 +256,15 @@
                         <i class="nav-icon fas fa-th"></i>
                         <p>
                             Tính Lương
+                            <span class="right badge badge-primary">Staff</span>
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{route('sentform.index')}}" class="nav-link">
+                        <i class="nav-icon fas fa-th"></i>
+                        <p>
+                            Kế Hoạch
                             <span class="right badge badge-primary">Staff</span>
                         </p>
                     </a>

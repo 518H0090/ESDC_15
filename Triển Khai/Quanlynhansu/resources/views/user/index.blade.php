@@ -45,27 +45,27 @@
                             <td>{{$Item->email}}</td>
                             <td>
                               @if ($Item->employee_id == null)
-                                {{$Item->employee_id}}
+
                               @else
-                                 {{$Item->employee->name}}                                  
+                                 {{$Item->employee->name}}
                               @endif
 
                             </td>
                             <td>
                               @if ($Item->employee_id == null)
-                                {{$Item->employee_id}}
+
                               @else
                               <img class="image--small" src="{{$Item->employee->image_employee}}" alt="">
-                                            
+
                               @endif
                             </td>
                             <td>
                               @if ($Item->role_id == null)
                               {{$Item->role_id}}
                             @else
-                               {{$Item->role->name}}                                  
+                               {{$Item->role->name}}
                             @endif
-                            
+
                             </td>
                             <td>
                                 <a href="{{route('user.edit',['id'=>$Item->id])}}" class="btn btn-default">Sửa</a>

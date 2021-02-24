@@ -11,6 +11,7 @@ use App\Http\Controllers\StatistController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\SentFormController;
 
 /*
 |--------------------------------------------------------------------------
@@ -168,6 +169,25 @@ Route::prefix('/All')->group(function () {
         Route::get('/editpassword/{id}',[UserController::class,'editpassword'])->name('user.editpassword')->middleware('AdminMiddle');
 
         Route::post('/updatepassword/{id}',[UserController::class,'updatepassword'])->name('user.updatepassword')->middleware('AdminMiddle');
+    });
+
+    //đang làm chưa thêm vào form
+    Route::prefix('/sentform')->group(function () {
+        Route::get('/',[SentFormController::class,'index'])->name('sentform.index')->middleware('LoginMiddle');
+
+        Route::get('/add',[SentFormController::class,'add'])->name('sentform.add')->middleware('LoginMiddle');
+
+        Route::post('/store',[SentFormController::class,'store'])->name('sentform.store')->middleware('LoginMiddle');
+
+        Route::get('/delete/{id}',[SentFormController::class,'delete'])->name('sentform.delete')->middleware('LoginMiddle');
+
+        Route::get('/edit/{id}',[SentFormController::class,'edit'])->name('sentform.edit')->middleware('LoginMiddle');
+
+        Route::post('/update/{id}',[SentFormController::class,'update'])->name('sentform.update')->middleware('LoginMiddle');
+
+        Route::get('/confirm/{id}',[SentFormController::class,'confirm'])->name('sentform.cofirm')->middleware('ManageMiddle');
+
+        Route::post('/verify/{id}',[SentFormController::class,'verify'])->name('sentform.verify')->middleware('ManageMiddle');
     });
 });
 
