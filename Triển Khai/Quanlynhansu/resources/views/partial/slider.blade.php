@@ -21,7 +21,7 @@
                 <a href="{{route('home')}}" class="d-block">{{\Illuminate\Support\Facades\Auth::user()->email}}</a>
             </div>
         </div>
-      
+
                 <!-- Sidebar Menu -->
         <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
@@ -107,12 +107,32 @@
                         </p>
                     </a>
                 </li>
-                    
+
                 <li class="nav-item">
                     <a href="{{route('sentform.index')}}" class="nav-link">
                         <i class="nav-icon fas fa-th"></i>
                         <p>
                             Kế Hoạch
+                            <span class="right badge badge-primary">Admin</span>
+                        </p>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="{{route('restore.index')}}" class="nav-link">
+                        <i class="nav-icon fas fa-th"></i>
+                        <p>
+                            Phục Hồi
+                            <span class="right badge badge-primary">Admin</span>
+                        </p>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="{{route('announcement.index')}}" class="nav-link">
+                        <i class="nav-icon fas fa-th"></i>
+                        <p>
+                            Thông Báo
                             <span class="right badge badge-primary">Admin</span>
                         </p>
                     </a>
@@ -129,7 +149,7 @@
                 <a href="{{route('home')}}" class="d-block">{{\Illuminate\Support\Facades\Auth::user()->email}}</a>
             </div>
         </div>
-      
+
                 <!-- Sidebar Menu -->
         <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
@@ -197,7 +217,17 @@
                         </p>
                     </a>
                 </li>
-            
+
+                <li class="nav-item">
+                    <a href="{{route('announcement.index')}}" class="nav-link">
+                        <i class="nav-icon fas fa-th"></i>
+                        <p>
+                            Thông Báo
+                            <span class="right badge badge-primary">Manage</span>
+                        </p>
+                    </a>
+                </li>
+
             </ul>
         </nav>
            @elseif(\Illuminate\Support\Facades\Auth::user()->role_id == 3)
@@ -210,7 +240,7 @@
                 <a href="{{route('home')}}" class="d-block">{{\Illuminate\Support\Facades\Auth::user()->email}}</a>
             </div>
         </div>
-      
+
                 <!-- Sidebar Menu -->
         <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
@@ -269,13 +299,13 @@
                         </p>
                     </a>
                 </li>
-            
+
             </ul>
         </nav>
            @endif
        @endif
 
-      
+
         <!-- /.sidebar-menu -->
     </div>
     <!-- /.sidebar -->

@@ -16,4 +16,8 @@ class Department extends Model
     public function departmentjoin(){
         return $this->hasMany(Department_Join::class,'department_id','id');
     }
+
+    public function announce(){
+        return $this->hasMany(Announcement::class,'department_id');
+    }
 }

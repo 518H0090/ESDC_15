@@ -16,6 +16,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- Theme style -->
     <link rel="stylesheet" href="dist/css/adminlte.min.css">
     @yield('css')
+    @yield('jshead')
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
@@ -26,7 +27,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
     @yield('content')
 
-    
+
 
     @include('partial.footer')
 </div>

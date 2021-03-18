@@ -35,23 +35,23 @@
                                          <th scope="row">{{$Item->id}}</th>
                                          <td>
                                              @if ($Item->department == null)
-                                             <b>Tạm Thời Xóa</b> 
+                                             <b>Tạm Thời Xóa</b>
                                              @else
                                              {{$Item->department->name}}
                                              @endif
-                                             
+
                                         </td>
                                          <td>
                                              @if ($Item->employee == null)
-                                             <b>Tạm Thời Xóa</b> 
+                                             <b>Tạm Thời Xóa</b>
                                              @else
                                              {{$Item->employee->name}}
                                              @endif
-                                            
+
                                         </td>
                                          <td>
                                              @if ($Item->employee->regency == null)
-                                             <b>Tạm Thời Xóa</b> 
+                                             <b>Tạm Thời Xóa</b>
                                              @else
                                              {{$Item->employee->regency->name}}
                                              @endif
@@ -91,23 +91,23 @@
                                              <th scope="row">{{$Item->id}}</th>
                                              <td>
                                                 @if ($Item->department == null)
-                                                <b>Tạm Thời Xóa</b> 
+                                                <b>Tạm Thời Xóa</b>
                                                 @else
                                                 {{$Item->department->name}}
                                                 @endif
-                                                
+
                                            </td>
                                             <td>
                                                 @if ($Item->employee == null)
-                                                <b>Tạm Thời Xóa</b> 
+                                                <b>Tạm Thời Xóa</b>
                                                 @else
                                                 {{$Item->employee->name}}
                                                 @endif
-                                               
+
                                            </td>
                                             <td>
                                                 @if ($Item->employee->regency == null)
-                                                <b>Tạm Thời Xóa</b> 
+                                                <b>Tạm Thời Xóa</b>
                                                 @else
                                                 {{$Item->employee->regency->name}}
                                                 @endif

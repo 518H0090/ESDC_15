@@ -44,7 +44,7 @@
                                                  @else
                                                  {{$item->employee->name}}
                                                  @endif
-                                                 
+
                                             </td>
                                              <td colspan="2">
                                                  Năm:{{$item->year}}|| Tháng:{{$item->month}}
@@ -96,7 +96,7 @@
                                                 @else
                                                 {{$item->employee->name}}
                                                 @endif
-                                                
+
                                            </td>
                                              <td colspan="2">
                                                  Năm:{{$item->year}}|| Tháng:{{$item->month}}

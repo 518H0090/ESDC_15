@@ -57,4 +57,8 @@ class User extends Authenticatable
     public function sentform(){
         return $this->hasOne(SentForm::class,'user_id');
     }
+
+    public function announcement(){
+        return $this->hasMany(Announcement::class,'user_id');
+    }
 }

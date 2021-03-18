@@ -42,7 +42,7 @@
                                              <td>{{$item->daywork}}</td>
                                              <td>{{\Carbon\Carbon::create($item->daywork)->year}}</td>
                                              <td>{{\Carbon\Carbon::create($item->daywork)->monthName}}</td>
-                                             <td>{{\Carbon\Carbon::create($item->daywork)->weekOfYear }}</td>
+                                             <td>{{\Carbon\Carbon::create($item->daywork)->weekOfMonth }}</td>
                                              <td>
                                                  @if(\Carbon\Carbon::create($item->daywork)->dayOfWeekIso == 1)
                                                      <b>Thứ 2</b>
@@ -68,7 +68,7 @@
                                                  @else
                                                  {{$item->employee->name}}
                                                  @endif
-                                                
+
                                             </td>
                                              <td>
 
@@ -116,7 +116,7 @@
                                              <td>{{$item->daywork}}</td>
                                              <td>{{\Carbon\Carbon::create($item->daywork)->year}}</td>
                                              <td>{{\Carbon\Carbon::create($item->daywork)->monthName}}</td>
-                                             <td>{{\Carbon\Carbon::create($item->daywork)->weekOfYear }}</td>
+                                             <td>{{\Carbon\Carbon::create($item->daywork)->weekOfMonth }}</td>
                                              <td>
                                                  @if(\Carbon\Carbon::create($item->daywork)->dayOfWeekIso == 1)
                                                      <b>Thứ 2</b>
@@ -141,7 +141,7 @@
                                                 @else
                                                 {{$item->employee->name}}
                                                 @endif
-                                               
+
                                            </td>
                                              <td>
 
