@@ -103,7 +103,7 @@
                             <div class="card-body">
                               <h5 class="card-title">Thông Báo Restore</h5>
                               <p class="card-text">Hello Thông Báo</p>
-                              <a href="#" class="btn btn-primary">Go somewhere</a>
+                              <a href="{{route('restore.restoreAnnounceRestore')}}" class="btn btn-primary">Go somewhere</a>
                             </div>
                           </div>
                     </div>

@@ -311,6 +311,17 @@ Route::prefix('/All')->group(function () {
                 Route::get('/deleteUserAll',[RestoreController::class,'deleteUserAll'])->name('restore.deleteUserAll');
 
             });
+
+            //Announcement
+            Route::prefix('/announcement')->group(function () {
+                Route::get('/restoreAnnounceRestore',[RestoreController::class,'restoreAnnounceRestore'])->name('restore.restoreAnnounceRestore');
+
+                Route::get('/restoreAnnounceAction/{id}',[RestoreController::class,'restoreAnnounceAction'])->name('restore.restoreAnnounceAction');
+                Route::get('/restoreAnnounceAll',[RestoreController::class,'restoreAnnounceAll'])->name('restore.restoreAnnounceAll');
+
+                Route::get('/deleteAnnounceAction/{id}',[RestoreController::class,'deleteAnnounceAction'])->name('restore.deleteAnnounceAction');
+                Route::get('/deleteAnnounceAll',[RestoreController::class,'deleteAnnounceAll'])->name('restore.deleteAnnounceAll');
+            });
         });
     });
 

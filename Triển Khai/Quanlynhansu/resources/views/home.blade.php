@@ -95,14 +95,50 @@
                         </thead>
                         <tbody>
                          @foreach($announcement as $item)
-                          <tr>
-                            <th scope="row">{{$item->id}}</th>
-                            <td>{{$item->name}}</td>
-                            <td>{{$item->tittle}}</td>
-                            <td>
-                                <a href="{{route('announcement.read',['id'=>$item->id])}}" class="btn btn-success">Click Here</a>
-                            </td>
-                          </tr>
+                          @if(\Illuminate\Support\Facades\Auth::user()->employee == null)
+                            @if($item->department_id == 0)
+                                <tr>
+                                    <th scope="row">{{$item->id}}</th>
+                                    <td>{{$item->name}}</td>
+
+                                    @if ($item->department != null)
+                                        <td>{{$item->department->name}}</td>
+                                    @elseif($item->department_id == 0)
+                                        <td>Thông Báo Chung</td>
+                                    @elseif($item->department == null and $item->department_id !=0 )
+                                        <td>
+                                            <b>Tạm Thời Xóa</b>
+                                        </td>
+                                    @endif
+
+                                    <td>
+                                        <a href="{{route('announcement.read',['id'=>$item->id])}}" class="btn btn-success">Click Here</a>
+                                    </td>
+                                </tr>
+                            @else
+                            @endif
+                          @else
+                              @if(\Illuminate\Support\Facades\Auth::user()->employee->departmentjoin->department->id ==  $item->department_id || $item->department_id==0)
+                              <tr>
+                                <th scope="row">{{$item->id}}</th>
+                                <td>{{$item->name}}</td>
+
+                                @if ($item->department != null)
+                                  <td>{{$item->department->name}}</td>
+                                @elseif($item->department_id == 0)
+                                    <td>Thông Báo Chung</td>
+                                @elseif($item->department == null and $item->department_id !=0 )
+                                    <td>
+                                        <b>Tạm Thời Xóa</b>
+                                    </td>
+                                @endif
+
+                                <td>
+                                    <a href="{{route('announcement.read',['id'=>$item->id])}}" class="btn btn-success">Click Here</a>
+                                </td>
+                              </tr>
+                                @endif
+                          @endif
                           @endforeach
                         </tbody>
                       </table>

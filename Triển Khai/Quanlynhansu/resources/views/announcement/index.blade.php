@@ -37,8 +37,12 @@
                             <td>{{$deparmentItem->name}}</td>
                             @if ($deparmentItem->department != null)
                                 <td>{{$deparmentItem->department->name}}</td>
+                            @elseif($deparmentItem->department_id == 0)
+                                <td>Thông Báo Chung</td>
                             @else
-                                <b>Tạm Thời Xóa</b>
+                                <td>
+                                    <b>Tạm Thời Xóa</b>
+                                </td>
                             @endif
                             <td>{{$deparmentItem->description}}</td>
                             <td>{{$deparmentItem->timeday}}</td>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Announcement;
 use App\Models\bonus_discip;
 use App\Models\Calendar;
 use App\Models\Employee;
@@ -17,10 +18,12 @@ class RestoreController extends Controller
     //
     private $employee;
     private $regency;
+    private $announcement;
 
-    public function __construct(Employee $employee,Regency $regency){
+    public function __construct(Employee $employee,Regency $regency,Announcement $announcement){
         $this->employee = $employee;
         $this->regency = $regency;
+        $this->announcement = $announcement;
     }
     //Employee
     public  function index(){
@@ -212,5 +215,31 @@ class RestoreController extends Controller
     public function deleteUserAll(){
         User::onlyTrashed()->forceDelete();
         return redirect()->route('restore.restoreUserRestore');
+    }
+
+    //Announcement
+    public function restoreAnnounceRestore(){
+        $announcement_trash = Announcement::onlyTrashed()->latest()->paginate(10);
+        return view('Restore.announcement',compact('announcement_trash'));
+    }
+
+    public function restoreAnnounceAction($id){
+        Announcement::onlyTrashed()->find($id)->restore();
+        return redirect()->route('restore.restoreAnnounceRestore');
+    }
+
+    public function restoreAnnounceAll(){
+        Announcement::onlyTrashed()->restore();
+        return redirect()->route('restore.restoreAnnounceRestore');
+    }
+
+    public function deleteAnnounceAction($id){
+        Announcement::onlyTrashed()->find($id)->forceDelete();
+        return redirect()->route('restore.restoreAnnounceRestore');
+    }
+
+    public function deleteAnnounceAll(){
+        Announcement::onlyTrashed()->forceDelete();
+        return redirect()->route('restore.restoreAnnounceRestore');
     }
 }
