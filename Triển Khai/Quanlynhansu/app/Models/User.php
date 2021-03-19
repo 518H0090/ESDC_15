@@ -61,4 +61,8 @@ class User extends Authenticatable
     public function announcement(){
         return $this->hasMany(Announcement::class,'user_id');
     }
+
+    public function sentoff(){
+        return $this->hasMany(SentOf::class,'user_id');
+    }
 }

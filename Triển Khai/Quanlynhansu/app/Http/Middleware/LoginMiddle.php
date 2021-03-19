@@ -18,10 +18,16 @@ class LoginMiddle
     public function handle(Request $request, Closure $next)
     {
         if(Auth::check()){
-            return $next($request);
+
+            if(\auth()->user()->role_id == 1 || \auth()->user()->role_id==2 || \auth()->user()->role_id==3){
+                return $next($request);
+            }else{
+                return redirect()->route('dangnhap.dangnhap');
+            }
+
         }else {
             return redirect()->route('dangnhap.dangnhap');
-         }
+        }
 
     }
 }

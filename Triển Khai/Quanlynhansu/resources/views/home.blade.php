@@ -95,7 +95,7 @@
                         </thead>
                         <tbody>
                          @foreach($announcement as $item)
-                          @if(\Illuminate\Support\Facades\Auth::user()->employee == null)
+                          @if(\Illuminate\Support\Facades\Auth::user()->employee->departmentjoin->department == null)
                             @if($item->department_id == 0)
                                 <tr>
                                     <th scope="row">{{$item->id}}</th>

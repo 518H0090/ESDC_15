@@ -16,8 +16,8 @@ class CreateAnnouncementTable extends Migration
         Schema::create('announcement', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->integer('user_id');
-            $table->integer('department_id');
+            $table->integer('user_id')->references('id')->on('users')->onUpdate('cascade');
+            $table->integer('department_id')->references('id')->on('departments')->onUpdate('cascade');
             $table->date('timeday');
             $table->text('description');
             $table->timestamps();
