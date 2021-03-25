@@ -1,13 +1,13 @@
 @extends('layout.main')
 
 @section('tittle')
-    <title>Sent Form</title>
+    <title>Kế Hoạch</title>
 @endsection
 
 @section('content')
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
-        @include('layout.content-header',['name' => ' Sent Form','sub' => 'List'])
+        @include('layout.content-header',['name' => 'Kế Hoạch','sub' => 'List'])
 
          <!-- Main content -->
          <div class="content">

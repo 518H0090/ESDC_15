@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Components\ListItem;
+use App\Http\Requests\BonusDiscipRequest;
 use App\Models\bonus_discip;
 use App\Models\Employee;
 use Carbon\Carbon;
@@ -37,7 +38,7 @@ class BonusDiscipController extends Controller
         return view('bonusdiscip.add',compact('employee','timenow'));
     }
 
-    public function store(Request $request){
+    public function store(BonusDiscipRequest $request){
         $this->bonusdiscip->create($request->all());
         return redirect()->route('bonusdiscip.index');
     }
@@ -54,7 +55,7 @@ class BonusDiscipController extends Controller
         return view('bonusdiscip.edit',compact('bonusdiscip','employee'));
     }
 
-    public function update(Request $request,$id){
+    public function update(BonusDiscipRequest $request,$id){
         $this->bonusdiscip->find($id)->update($request->all());
         return redirect()->route('bonusdiscip.index');
     }

@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Announcement;
 use App\Models\bonus_discip;
 use App\Models\Calendar;
+use App\Models\Department;
+use App\Models\Department_Join;
 use App\Models\Employee;
 use App\Models\Regency;
 use App\Models\SentForm;
@@ -241,5 +243,57 @@ class RestoreController extends Controller
     public function deleteAnnounceAll(){
         Announcement::onlyTrashed()->forceDelete();
         return redirect()->route('restore.restoreAnnounceRestore');
+    }
+
+    //Department
+    public function restoreDeparmentRestore(){
+        $department_trash = Department::onlyTrashed()->latest()->paginate(10);
+        return view('Restore.department',compact('department_trash'));
+    }
+
+    public function restoreDeparmentAction($id){
+        Department::onlyTrashed()->find($id)->restore();
+        return redirect()->route('restore.restoreDeparmentRestore');
+    }
+
+    public function restoreDeparmentAll(){
+        Department::onlyTrashed()->restore();
+        return redirect()->route('restore.restoreDeparmentRestore');
+    }
+
+    public function deleteDeparmentAction($id){
+        Department::onlyTrashed()->find($id)->forceDelete();
+        return redirect()->route('restore.restoreDeparmentRestore');
+    }
+
+    public function deleteDeparmentAll(){
+        Department::onlyTrashed()->forceDelete();
+        return redirect()->route('restore.restoreDeparmentRestore');
+    }
+
+    //Department Join
+    public function restoreDeparmentJoinRestore(){
+        $departmentjoin_trash = Department_Join::onlyTrashed()->latest()->paginate(10);
+        return view('Restore.departmentjoin',compact('departmentjoin_trash'));
+    }
+
+    public function restoreDeparmentJoinAction($id){
+        Department_Join::onlyTrashed()->find($id)->restore();
+        return redirect()->route('restore.restoreDeparmentJoinRestore');
+    }
+
+    public function restoreDeparmentJoinAll(){
+        Department_Join::onlyTrashed()->restore();
+        return redirect()->route('restore.restoreDeparmentJoinRestore');
+    }
+
+    public function deleteDeparmentJoinAction($id){
+        Department_Join::onlyTrashed()->find($id)->forceDelete();
+        return redirect()->route('restore.restoreDeparmentJoinRestore');
+    }
+
+    public function deleteDeparmentJoinAll(){
+        Department_Join::onlyTrashed()->forceDelete();
+        return redirect()->route('restore.restoreDeparmentJoinRestore');
     }
 }

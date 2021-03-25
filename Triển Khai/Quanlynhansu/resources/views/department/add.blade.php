@@ -1,24 +1,33 @@
 @extends('layout.main')
 
 @section('tittle')
-    <title>Department</title>
+    <title>Phòng Làm</title>
 @endsection
 
 @section('content')
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
-        @include('layout.content-header',['name' => 'Department','sub' => 'Add'])
+        @include('layout.content-header',['name' => 'Phòng Làm','sub' => 'Add'])
 
          <!-- Main content -->
          <div class="content">
              <div class="container-fluid">
                  <div class="row">
                    <div class="col-md-6">
+                    @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
                     <form action="{{route('department.store')}}" method="POST">
                         @csrf
                         <div class="form-group">
                           <label>Tên Phòng Ban</label>
-                          <input type="text" class="form-control @error('name') is-invalid @enderror"
+                          <input type="text" class="form-control"
                           name='name'
                           placeholder="Điền Tên Phòng Ban"
                           value="{{old('name')}}">
@@ -29,7 +38,7 @@
 
                         <div class="form-group">
                             <label>Điền mô tả</label>
-                            <textarea class="form-control @error('description') is-invalid @enderror"
+                            <textarea class="form-control"
                              name='description' rows="8">
                              {{old('description')}}
                             </textarea>

@@ -1,13 +1,13 @@
 @extends('layout.main')
 
 @section('tittle')
-    <title> Department</title>
+    <title>Khen - Phạt</title>
 @endsection
 
 @section('content')
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
-        @include('layout.content-header',['name' => ' Department','sub' => 'List'])
+        @include('layout.content-header',['name' => ' Khen - Phạt','sub' => 'List'])
 
          <!-- Main content -->
          <div class="content">
@@ -45,7 +45,7 @@
                                                  @else
                                                  {{$Item->employee->name}}
                                                  @endif
-                                                
+
                                             </td>
                                              <td>{{$Item->money}}</td>
                                              <td>{{$Item->description}}</td>
@@ -94,7 +94,7 @@
                                                 @else
                                                 {{$Item->employee->name}}
                                                 @endif
-                                               
+
                                            </td>
                                              <td>{{$Item->money}}</td>
                                              <td>{{$Item->description}}</td>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Components\ListItem;
+use App\Http\Requests\CalendarRequest;
 use App\Models\Calendar;
 use App\Models\Employee;
 use Carbon\Carbon;
@@ -29,7 +30,7 @@ class CalendarController extends Controller
         return view('calendar.add',compact('employee'));
     }
 
-    public function store(Request $request){
+    public function store(CalendarRequest $request){
         $calendar = new Calendar();
         $calendar->employee_id = $request->employee_id;
         $calendar->daywork = $request->daywork;
@@ -57,7 +58,7 @@ class CalendarController extends Controller
         return $emloyeeoption;
     }
 
-    public function update($id,Request $request){
+    public function update($id,CalendarRequest $request){
         $calendar = $this->calendar->find($id);
         $calendar->update([
             'daywork' => $request->daywork,

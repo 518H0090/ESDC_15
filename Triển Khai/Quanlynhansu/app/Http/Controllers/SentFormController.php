@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\SentFormRequest;
 use App\Models\Calendar;
 use App\Models\SentForm;
 use App\Models\User;
@@ -37,7 +38,7 @@ class SentFormController extends Controller
         }
     }
 
-    public function store(Request $request){
+    public function store(SentFormRequest $request){
 //        $carbon = new Carbon($request->daywork);
 //        $timework = $carbon->weekOfYear;
 //        dd($timework);
@@ -61,7 +62,7 @@ class SentFormController extends Controller
         return view('sentform.edit',compact('sentform'));
     }
 
-    public function update($id , Request $request){
+    public function update($id , SentFormRequest $request){
         $this->sentform->find($id)->update([
             'user_id' => $request->user_id,
             'employee_id' => $request->employee_id,

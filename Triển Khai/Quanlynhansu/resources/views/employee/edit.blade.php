@@ -1,7 +1,7 @@
 @extends('layout.main')
 
 @section('tittle')
-    <title>Employee</title>
+    <title>Nhân Viên</title>
 @endsection
 @section('css')
     <style>
@@ -16,10 +16,19 @@
 @section('content')
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
-        @include('layout.content-header',['name' => 'Employee','sub' => 'Edit'])
+        @include('layout.content-header',['name' => 'Nhân Viên','sub' => 'Edit'])
 
          <!-- Main content -->
          <div class="content">
+            @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
              <div class="container-fluid">
                 <form action="{{route('employee.update',['id'=>$employee->id])}}" method="POST" enctype="multipart/form-data">
                  <div class="row">
@@ -28,13 +37,13 @@
                         <div class="form-group">
                           <label >Name</label>
                           <input type="text" class="form-control" name='name'  placeholder="Nhập tên" value="{{$employee->name}}">
-                         
+
                         </div>
                         <div class="form-group">
                             <label >Phone</label>
                             <input type="number" class="form-control" name='phone' placeholder="Nhập số điện thoại"
                              value="{{$employee->phone}}">
-                           
+
                           </div>
                           <div class="form-group">
                             <label>Chọn Chức Vụ</label>
@@ -43,7 +52,7 @@
                                 {!! $htmlOption !!}
                             </select>
                         </div>
-                        
+
                         <div class="form-group">
                             <img class='image--small' src="{{$employee->image_employee}}" alt="image">
                             <input type="hidden" name="image_name" value="{{$employee->file_name}}">
@@ -57,8 +66,8 @@
 
                           <button type="submit" class="btn btn-primary">Submit</button>
                    </div>
-                 
-                  
+
+
                  </div>
                 </form>
                  <!-- /.row -->

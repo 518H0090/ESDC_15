@@ -1,7 +1,7 @@
 @extends('layout.main')
 
 @section('tittle')
-    <title>Department</title>
+    <title>Thông Báo</title>
 @endsection
 
 @section('jshead')
@@ -17,7 +17,7 @@
 @section('content')
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
-        @include('layout.content-header',['name' => 'Department','sub' => 'Add'])
+        @include('layout.content-header',['name' => 'Thông Báo','sub' => 'Edit'])
 
          <!-- Main content -->
          <div class="content">
@@ -25,6 +25,15 @@
                  <div class="row">
 
                    <div class="col-md-6">
+                    @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
                     <form action="{{route('announcement.update',['id' => $announce->id])}}" method="POST">
                         @csrf
                         <div class="form-group">

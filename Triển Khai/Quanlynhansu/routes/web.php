@@ -308,6 +308,28 @@ Route::prefix('/All')->group(function () {
                 Route::get('/deleteAnnounceAction/{id}',[RestoreController::class,'deleteAnnounceAction'])->name('restore.deleteAnnounceAction')->middleware('ManageMiddle');
                 Route::get('/deleteAnnounceAll',[RestoreController::class,'deleteAnnounceAll'])->name('restore.deleteAnnounceAll')->middleware('ManageMiddle');
             });
+
+             //Department
+             Route::prefix('/deparment')->group(function () {
+                Route::get('/restoreDeparmentRestore',[RestoreController::class,'restoreDeparmentRestore'])->name('restore.restoreDeparmentRestore')->middleware('ManageMiddle');
+
+                Route::get('/restoreDeparmentAction/{id}',[RestoreController::class,'restoreDeparmentAction'])->name('restore.restoreDeparmentAction')->middleware('ManageMiddle');
+                Route::get('/restoreDeparmentAll',[RestoreController::class,'restoreDeparmentAll'])->name('restore.restoreDeparmentAll')->middleware('ManageMiddle');
+
+                Route::get('/deleteDeparmentAction/{id}',[RestoreController::class,'deleteDeparmentAction'])->name('restore.deleteDeparmentAction')->middleware('ManageMiddle');
+                Route::get('/deleteDeparmentAll',[RestoreController::class,'deleteDeparmentAll'])->name('restore.deleteDeparmentAll')->middleware('ManageMiddle');
+            });
+
+             //Department Join
+             Route::prefix('/deparmentjoin')->group(function () {
+                Route::get('/restoreDeparmentJoinRestore',[RestoreController::class,'restoreDeparmentJoinRestore'])->name('restore.restoreDeparmentJoinRestore')->middleware('ManageMiddle');
+
+                Route::get('/restoreDeparmentJoinAction/{id}',[RestoreController::class,'restoreDeparmentJoinAction'])->name('restore.restoreDeparmentJoinAction')->middleware('ManageMiddle');
+                Route::get('/restoreDeparmentJoinAll',[RestoreController::class,'restoreDeparmentJoinAll'])->name('restore.restoreDeparmentJoinAll')->middleware('ManageMiddle');
+
+                Route::get('/deleteDeparmentJoinAction/{id}',[RestoreController::class,'deleteDeparmentJoinAction'])->name('restore.deleteDeparmentJoinAction')->middleware('ManageMiddle');
+                Route::get('/deleteDeparmentJoinAll',[RestoreController::class,'deleteDeparmentJoinAll'])->name('restore.deleteDeparmentJoinAll')->middleware('ManageMiddle');
+            });
     });
 
     Route::prefix('/announcement')->group(function () {

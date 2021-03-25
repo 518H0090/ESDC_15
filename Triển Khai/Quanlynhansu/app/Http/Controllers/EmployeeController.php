@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Components\Recursive;
+use App\Http\Requests\EmployeeRequest;
 use App\Models\Employee;
 use App\Models\Regency;
 use Illuminate\Http\Request;
@@ -37,7 +38,7 @@ class EmployeeController extends Controller
         return view('employee.add',compact('htmlOption'));
     }
 
-    public function store(Request $request){
+    public function store(EmployeeRequest $request){
 
         if($request->hasFile('image_employee')){
             $file = $request->file('image_employee');
@@ -75,7 +76,7 @@ class EmployeeController extends Controller
         return view('employee.edit',compact('employee','htmlOption'));
     }
 
-    public function update($id,Request $request){
+    public function update($id,EmployeeRequest $request){
         if($request->hasFile('image_employee')){
             $file = $request->file('image_employee');
             $filename = $file->getClientOriginalName();

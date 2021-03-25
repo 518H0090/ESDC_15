@@ -1,13 +1,13 @@
 @extends('layout.main')
 
 @section('tittle')
-    <title>Calendar</title>
+    <title>Lịch Làm</title>
 @endsection
 
 @section('content')
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
-        @include('layout.content-header',['name' => 'Calendar','sub' => 'List'])
+        @include('layout.content-header',['name' => 'Lịch Làm','sub' => 'List'])
 
          <!-- Main content -->
          <div class="content">

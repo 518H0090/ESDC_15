@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Components\ListItem;
+use App\Http\Requests\AnnounceRequest;
 use App\Models\Announcement;
 use App\Models\Department;
 use Carbon\Carbon;
@@ -30,7 +31,7 @@ class AnnouncementController extends Controller
         return view('announcement.add',compact('department'));
     }
 
-    public function store(Request $request){
+    public function store(AnnounceRequest $request){
         $day = Carbon::now()->toDateString();
 
         $announment = new Announcement();
@@ -55,7 +56,7 @@ class AnnouncementController extends Controller
         return view('announcement.edit',compact('announce','department'));
     }
 
-    public function update($id,Request $request){
+    public function update($id,AnnounceRequest $request){
         $this->announcement->find($id)->update([
             'name' => $request->name,
             'department_id' => $request->department_id,

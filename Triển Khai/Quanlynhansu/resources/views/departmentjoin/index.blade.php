@@ -1,13 +1,13 @@
 @extends('layout.main')
 
 @section('tittle')
-    <title> Department</title>
+    <title>Tham Gia</title>
 @endsection
 
 @section('content')
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
-        @include('layout.content-header',['name' => ' Department','sub' => 'List'])
+        @include('layout.content-header',['name' => ' Tham Gia','sub' => 'List'])
 
          <!-- Main content -->
          <div class="content">

@@ -1,13 +1,13 @@
 @extends('layout.main')
 
 @section('tittle')
-    <title>Sent Form</title>
+    <title>Kế Hoạch</title>
 @endsection
 
 @section('content')
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
-        @include('layout.content-header',['name' => 'Sent Form','sub' => 'Add'])
+        @include('layout.content-header',['name' => 'Kế Hoạch','sub' => 'Add'])
 
          <!-- Main content -->
          <div class="content">
@@ -15,6 +15,16 @@
                  @if (\Illuminate\Support\Facades\Auth::check())
                  <div class="row">
                   <div class="col-md-6">
+                    <div class="container-fluid">
+                        @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
                    <form action="{{route('sentform.store')}}" method="POST">
                        @csrf
                        <div class="form-group">

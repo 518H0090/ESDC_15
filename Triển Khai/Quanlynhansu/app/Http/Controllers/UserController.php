@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Components\ListItem;
+use App\Http\Requests\UserRequest;
 use App\Models\Employee;
 use App\Models\Role;
 use http\Client\Curl\User;
@@ -46,7 +47,7 @@ class UserController extends Controller
         return $roleoption;
     }
 
-    public function store(Request $request){
+    public function store(UserRequest $request){
         $this->user->create([
             'email' => $request->email,
             'password' => bcrypt($request->password),

@@ -1,36 +1,45 @@
 @extends('layout.main')
 
 @section('tittle')
-    <title>Department</title>
+    <title>Tham Gia</title>
 @endsection
 
 @section('content')
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
-        @include('layout.content-header',['name' => 'Department','sub' => 'Add'])
+        @include('layout.content-header',['name' => 'Tham Gia','sub' => 'Edit'])
 
          <!-- Main content -->
          <div class="content">
              <div class="container-fluid">
                  <div class="row">
                    <div class="col-md-6">
+                    @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
                     <form action="{{route('departmentjoin.update',['id'=>$departmentjoin->id])}}" method="POST">
                         @csrf
                         <div class="form-group">
                           <label>Chọn Phòng Ban</label>
                           <select class="form-control " name='department_id'>
-                              <option value='0'>Chọn Phòng Ban</option>
+                              <option value=''>Chọn Phòng Ban</option>
                               {!! $department !!}
                           </select>
                       </div>
                       <div class="form-group">
                         <label>Chọn Nhân Viên</label>
                         <select class="form-control " name='employee_id'>
-                            <option value='0'>Chọn Nhân Viên</option>
+                            <option value=''>Chọn Nhân Viên</option>
                             {!! $employee !!}
                         </select>
                     </div>
-                      
+
 
                         <button type="submit" class="btn btn-primary">Submit</button>
                       </form>

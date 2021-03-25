@@ -1,7 +1,7 @@
 @extends('layout.main')
 
 @section('tittle')
-    <title>Department</title>
+    <title>Lịch Làm</title>
 @endsection
 
 @section('css')
@@ -14,13 +14,22 @@
 @section('content')
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
-        @include('layout.content-header',['name' => 'Department','sub' => 'Add'])
+        @include('layout.content-header',['name' => 'Lịch Làm','sub' => 'Edit'])
 
          <!-- Main content -->
          <div class="content">
              <div class="container-fluid">
                  <div class="row">
                    <div class="col-md-6">
+                    @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
                     <form action="{{route('calendar.update',['id'=>$calendar->id])}}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group">
@@ -39,11 +48,11 @@
                           value="{{$calendar->ca}}"
                           >
                         </div>
-                      
+
                         <div class="form-group">
                           <label>Chọn Nhân Viên</label>
                           <select class="form-control" name='employee_id'>
-                              <option value='0'>Chọn Nhân Viên</option>
+                              <option value=''>Chọn Nhân Viên</option>
                               {!! $employee !!}
                           </select>
                       </div>
@@ -58,13 +67,13 @@
                             <option value='0'>Nghỉ làm</option>
                             <option value='1' selected>Đi làm</option>
                             @endif
-                             
-                             
+
+
                           </select>
                       </div>
 
-                      
-          
+
+
                         <button type="submit" class="btn btn-primary">Submit</button>
                       </form>
                    </div>
@@ -84,5 +93,5 @@
       placeholder: 'chọn nhân viên',
     });
   </script>
-  
+
 @endsection

@@ -29,13 +29,13 @@ class DepartmentRequest extends FormRequest
         ];
     }
 
-    public function messages()
-    {
-        return [
-            'name.required' => 'Làm ơn nhập tên phòng ban',
-            'name.max' => 'độ dài tên chỉ có tối đa 50 ký tự',
-            'description.required' => 'Làm ơn nhập mô tả cho phòng ban',
-            'description.max' => 'độ dài mô tả chỉ có tối đa 255 ký tự',
-        ];
-    }
+    // public function messages()
+    // {
+    //     return [
+    //         'name.required' => 'Làm ơn nhập tên phòng ban',
+    //         'name.max' => 'độ dài tên chỉ có tối đa 50 ký tự',
+    //         'description.required' => 'Làm ơn nhập mô tả cho phòng ban',
+    //         'description.max' => 'độ dài mô tả chỉ có tối đa 255 ký tự',
+    //     ];
+    // }
 }

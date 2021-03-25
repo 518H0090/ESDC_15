@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Components\ListItem;
 use App\Components\Recursive;
+use App\Http\Requests\DepartmentJoinRequest;
 use App\Models\Department;
 use App\Models\Department_Join;
 use App\Models\Employee;
@@ -50,7 +51,7 @@ class DepartmentJoinController extends Controller
         return view('departmentjoin.add',compact('department','employee'));
     }
 
-    public function store(Request $request){
+    public function store(DepartmentJoinRequest $request){
         $this->deparmentjoin->create($request->all());
         return redirect()->route('departmentjoin.index');
     }
@@ -67,7 +68,7 @@ class DepartmentJoinController extends Controller
         return view('departmentjoin.edit',compact('department','employee','departmentjoin'));
     }
 
-    public function update($id,Request $request){
+    public function update($id,DepartmentJoinRequest $request){
         $this->deparmentjoin->find($id)->update($request->all());
         return redirect()->route('departmentjoin.index');
     }

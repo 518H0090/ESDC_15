@@ -35,6 +35,16 @@
                         </p>
                     </a>
                 </li>
+
+                <li class="nav-item">
+                    <a href="{{route('announcement.index')}}" class="nav-link">
+                        <i class="nav-icon fas fa-th"></i>
+                        <p>
+                            Thông Báo
+                            <span class="right badge badge-primary">Admin</span>
+                        </p>
+                    </a>
+                </li>
                 <li class="nav-item">
                     <a href="{{route('department.index')}}" class="nav-link">
                         <i class="nav-icon fas fa-th"></i>
@@ -62,6 +72,16 @@
                         </p>
                     </a>
                 </li>
+
+                <li class="nav-item">
+                    <a href="{{route('user.index')}}" class="nav-link">
+                        <i class="nav-icon fas fa-th"></i>
+                        <p>
+                            Người Dùng
+                            <span class="right badge badge-primary">Admin</span>
+                        </p>
+                    </a>
+                </li>
                 <li class="nav-item">
                     <a href="{{route('departmentjoin.index')}}" class="nav-link">
                         <i class="nav-icon fas fa-th"></i>
@@ -81,6 +101,16 @@
                     </a>
                 </li>
                 <li class="nav-item">
+                    <a href="{{route('sentform.index')}}" class="nav-link">
+                        <i class="nav-icon fas fa-th"></i>
+                        <p>
+                            Kế Hoạch
+                            <span class="right badge badge-primary">Admin</span>
+                        </p>
+                    </a>
+                </li>
+
+                <li class="nav-item">
                     <a href="{{route('bonusdiscip.index')}}" class="nav-link">
                         <i class="nav-icon fas fa-th"></i>
                         <p>
@@ -98,41 +128,18 @@
                         </p>
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a href="{{route('user.index')}}" class="nav-link">
-                        <i class="nav-icon fas fa-th"></i>
-                        <p>
-                            Người Dùng
-                            <span class="right badge badge-primary">Admin</span>
-                        </p>
-                    </a>
-                </li>
 
-                <li class="nav-item">
-                    <a href="{{route('sentform.index')}}" class="nav-link">
-                        <i class="nav-icon fas fa-th"></i>
-                        <p>
-                            Kế Hoạch
-                            <span class="right badge badge-primary">Admin</span>
-                        </p>
-                    </a>
-                </li>
+
+
+
+
+
 
                 <li class="nav-item">
                     <a href="{{route('restore.index')}}" class="nav-link">
                         <i class="nav-icon fas fa-th"></i>
                         <p>
                             Phục Hồi
-                            <span class="right badge badge-primary">Admin</span>
-                        </p>
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a href="{{route('announcement.index')}}" class="nav-link">
-                        <i class="nav-icon fas fa-th"></i>
-                        <p>
-                            Thông Báo
                             <span class="right badge badge-primary">Admin</span>
                         </p>
                     </a>

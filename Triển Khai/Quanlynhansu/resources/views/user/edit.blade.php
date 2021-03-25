@@ -1,19 +1,29 @@
 @extends('layout.main')
 
 @section('tittle')
-    <title>Department</title>
+    <title>Người Dùng</title>
 @endsection
 
 @section('content')
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
-        @include('layout.content-header',['name' => 'Department','sub' => 'Add'])
+        @include('layout.content-header',['name' => 'Người Dùng','sub' => 'Edit'])
 
          <!-- Main content -->
          <div class="content">
              <div class="container-fluid">
                  <div class="row">
                    <div class="col-md-6">
+                    <div class="container-fluid">
+                        @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
                     <form action="{{route('user.update',['id'=>$user->id])}}" method="POST">
                         @csrf
 
@@ -34,8 +44,8 @@
                             value="{{$user->password}}"
                             >
                           </div> --}}
-                    
-                      
+
+
                       <div class="form-group">
                         <label>Chọn Nhân Viên</label>
                         <select class="form-control " name='employee_id'>
@@ -51,7 +61,7 @@
                             {!! $role !!}
                         </select>
                     </div>
-                      
+
 
                         <button type="submit" class="btn btn-primary">Submit</button>
                       </form>

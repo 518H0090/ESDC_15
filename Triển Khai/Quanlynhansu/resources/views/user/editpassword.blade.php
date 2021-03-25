@@ -1,13 +1,13 @@
 @extends('layout.main')
 
 @section('tittle')
-    <title>Department</title>
+    <title>Người Dùng</title>
 @endsection
 
 @section('content')
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
-        @include('layout.content-header',['name' => 'Department','sub' => 'Add'])
+        @include('layout.content-header',['name' => 'Người Dùng','sub' => 'Reset'])
 
          <!-- Main content -->
          <div class="content">
@@ -17,7 +17,7 @@
                     <form action="{{route('user.updatepassword',['id'=>$user->id])}}" method="POST">
                         @csrf
 
-                       
+
 
                         <div class="form-group">
                             <label>Mật Khẩu Mới</label>
@@ -27,9 +27,9 @@
                             value="{{$user->password}}"
                             >
                           </div>
-                    
-                      
-                    
+
+
+
 
                         <button type="submit" class="btn btn-primary">Submit</button>
                       </form>

@@ -1,7 +1,7 @@
 @extends('layout.main')
 
 @section('tittle')
-    <title>Employee</title>
+    <title>Nhân Viên</title>
 @endsection
 
 @section('css')
@@ -17,7 +17,7 @@
 @section('content')
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
-        @include('layout.content-header',['name' => 'Employee','sub' => 'List'])
+        @include('layout.content-header',['name' => 'Nhân Viên','sub' => 'List'])
 
          <!-- Main content -->
          <div class="content">
@@ -49,11 +49,11 @@
                                 <td>{{$Eitem->phone}}</td>
                                 <td>
                                     @if ($Eitem->regency == null)
-                                       <b>Tạm Thời Xóa</b> 
+                                       <b>Tạm Thời Xóa</b>
                                     @else
                                     {{$Eitem->regency->name}}
                                     @endif
-                                    
+
                                 </td>
                                 <td>
                                     <a href="{{route('employee.edit',['id'=>$Eitem->id])}}" class="btn btn-default">Sửa</a>
@@ -61,8 +61,8 @@
                                 </td>
                             </tr>
                             @endforeach
-                              
-                    
+
+
                             </tbody>
                           </table>
                      </div>

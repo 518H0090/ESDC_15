@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Components\ListItem;
+use App\Http\Requests\StatistRequest;
 use App\Models\Employee;
 use App\Models\Statist;
 use Carbon\Carbon;
@@ -36,7 +37,7 @@ class StatistController extends Controller
         return view('statists.add',compact('employee'));
     }
 
-    public function store(Request $request){
+    public function store(StatistRequest $request){
         $this->statist->create([
             'employee_id' => $request->employee_id,
              'year' => $request->year,

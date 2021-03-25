@@ -1,12 +1,12 @@
 @extends('layout.main')
 
 @section('tittle')
-    <title>Department</title>
+    <title>Thông Báo</title>
 @endsection
 @section('content')
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
-        @include('layout.content-header',['name' => 'Department','sub' => 'Add'])
+        @include('layout.content-header',['name' => 'Thông Báo','sub' => 'Read'])
 
          <!-- Main content -->
          <div class="content">
